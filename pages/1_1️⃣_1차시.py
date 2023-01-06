@@ -32,16 +32,16 @@ with col3:
 
 options = st.multiselect("두 마리의 동물을 골라주세요", ["참새", "곰", "여우", "금붕어", "오리", "돌고래"], ["참새", "금붕어"]
 # st.write(f":white_circle: {options[0]}와(과) {options[1]}의 특징을 적어보자")
-text1 = st.text_input()
+text1 = st.text_input("생각적기")
 st.write(options[0])
 # st.write(f":white_circle: {options[0]}와(과) {options[1]}의 공통된 특징을 적어보자")
-text2 = st.text_input()
+text2 = st.text_input("생각적기")
 # st.write(f":white_circle: {options[0]}와(과) {options[1]}의 다른 특징을 적어보자")
-text3 = st.text_input()
+text3 = st.text_input("생각적기")
 st.write(":white_circle: 6마리의 동물들을 분류할 수 있는 특징을 찾아보자.")
-text4 = st.text_input()
+text4 = st.text_input("생각적기")
 st.write(":white_circle: 위에서 생각한 특징들로 동물을 분류해보자.")
-text5 = st.text_input()
+text5 = st.text_input("생각적기")
 
 st.header(":two: 활동 2 : 컴퓨터가 이미지를 이해하는 방법")
 st.write("컴퓨터는 숫자를 통해 이미지를 이해한다. 이때, 픽셀이란 단위를 통해 이미지를 이해하고 각 픽셀은 숫자를 갖는다. \n 숫자가 작아지면 이미지가 어두워지고, 숫자가 커지면 이미지가 밝아진다.")
@@ -63,11 +63,11 @@ st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징과 인식할 �
 text6 = st.text_input("인식할 수 있는 특징")
 text7 = st.text_input("인식할 수 없는 특징")
 st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징의 공통점은 무엇일까?")
-text8 = st.text_input()
+text8 = st.text_input("생각적기")
 if st.button("공통점은?"):
 	st.write("동물의 생김새가 아닐까!")
 st.write(":white_circle: 활동(1)에서 찾는 특징 중 생김새와 관련된 특징을 찾아보자. 나아가 생김새와 관련된 추가적인 특징을 찾아본다.")  
-text9 = st.text_input()
+text9 = st.text_input("생각적기")
 
 st.header(":book: 오늘 배운 내용 정리하기")
 st.write(":white_circle: 컴퓨터는 이미지를 숫자로 인식한다")
