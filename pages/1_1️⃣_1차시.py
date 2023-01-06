@@ -4,9 +4,9 @@ from PIL import Image
 import torch
 import torchvision.transforms as transforms
 
-st.title("1차시 : 동물들을 생김새를 이용하여 분류할 수 있을까?")
+st.title("1차시 : 생김새를 동물들을  \이용하여 분류할 수 있을까?")
 
-st.header(":grey_question: AI 학습에는 잘 분류된 데이터가 필요할까?")
+st.header("생각해보기 :grey_question: AI 학습에는 잘 분류된 데이터가 필요할까?")
 image_url = "images/image01.jpg"
 youtube_url = "https://www.youtube.com/watch?v=_Js2GVyKELk"
 st.image(image_url, use_column_width=True)
@@ -14,8 +14,8 @@ st.markdown(f"[자료1. 동물의 특징으로 분류하기]({youtube_url})")
 st.header(":grey_exclamation: 이번 시간의 목표 ")
 st.write(":white_circle: 다양한 동물들의 특징을 찾아보고, 컴퓨터가 인식할 수 있는 특징으로 동물들을 분류할 수 있다.")
 
-st.header(":one: 활동 1")
-
+st.header(":one: 활동 1 : 이미지를 통해 동물들의 특징을 찾아보자")
+st.write("아래에는 참새, 곰, 여우, 금붕어, 오리, 돌고래의 이미지가 있다. 두 마리의 동물을 골라서 특징을 비교해보자. 나아가 모든 동물들의 특징을 비교해보자.")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -30,13 +30,21 @@ with col3:
     st.image("images/image04.jpg", use_column_width=True)
     st.image("images/image07.jpg", use_column_width=True)
 
-st.write(":white_circle: 각 동물의 특징을 적어보자")
-st.write(":white_circle: 동물들을 분류할 수 있는 특징을 찾아보자.")
-st.write(":white_circle: 특징으로 동물을 분류해보자.")
+options = st.multiselect("두 마리의 동물을 골라주세요", ["참새", "곰", "여우", "금붕어", "오리", "돌고래"], ["참새", "금붕어"]
+st.write(f":white_circle: {options[0]}와(과) {options[1]}의 특징을 적어보자")
+text1 = st.text_input()
+st.write(f":white_circle: {options[0]}와(과) {options[1]}의 공통된 특징을 적어보자")
+text2 = st.text_input()
+st.write(f":white_circle: {options[0]}와(과) {options[1]}의 다른 특징을 적어보자")
+text3 = st.text_input()
+st.write(":white_circle: 6마리의 동물들을 분류할 수 있는 특징을 찾아보자.")
+text4 = st.text_input()
+st.write(":white_circle: 위에서 생각한 특징들로 동물을 분류해보자.")
+text5 = st.text_input()
 
-st.header(":two: 활동 2")
-st.write("컴퓨터가 이미지를 어떻게 숫자로 인식하는지 알아보자")
-fac = st.slider("1부터 255사이 숫자를 고르세요", min_value = 1 , max_value = 255)
+st.header(":two: 활동 2 : 컴퓨터가 이미지를 이해하는 방법")
+st.write("컴퓨터는 숫자를 통해 이미지를 이해한다. 이때, 픽셀이란 단위를 통해 이미지를 이해하고 각 픽셀은 숫자를 갖는다. \n 숫자가 작아지면 이미지가 어두워지고, 숫자가 커지면 이미지가 밝아진다.")
+fac = st.slider("숫자의 크기를 바꿔보며 이미지의 변화를 관찰해보자", min_value = 1 , max_value = 255)
 img = Image.open("images/image03.jpg")
 img = img.resize((600,600)).convert("RGB")
 fade = torch.tensor(1 - np.ones((3,600,600)) * fac)
@@ -47,16 +55,21 @@ with col1 :
 with col2 :
     blendimage = Image.blend(img, img_new, alpha = 0.8)
     st.image(blendimage, use_column_width=True)
-st.write(":white_circle: 컴퓨터는 이미지를 픽셀로 나눠서 인식함을 이해한다.")
-st.write(":white_circle: 각 픽셀은 숫자로 표현하여 인식함을 이해한다. ")
 
-st.header(":three: 컴퓨터가 인식할 수 있는 동물의 특징을 알아보자")
-st.write(":white_circle: 위의 특징들 중 컴퓨터가 인식할 수 있는 특징과 아닌 특징을 구분해 본다.")
-st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징은 생김새와 관련된 특징임을 인식한다.")
-st.write(":white_circle: 활동(1)에서 찾는 특징 중 생김새와 관련된 특징을 찾아보고, 생김새와 관련된 추가적인 특징을 찾아본다.")  
+st.header(":three: 활동3 : 컴퓨터가 인식할 수 있는 동물의 특징을 알아보자")
+st.write(":white_circle: 활동1에서 찾은 특징 : ", text4)
+st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징과 인식할 수 없는 특징을 구분해보자")
+text6 = st.text_input("인식할 수 있는 특징")
+text7 = st.text_input("인식할 수 없는 특징")
+st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징의 공통점은 무엇일까?")
+text8 = st.text_input()
+if st.button("공통점은?"):
+	st.write("동물의 생김새가 아닐까!")
+st.write(":white_circle: 활동(1)에서 찾는 특징 중 생김새와 관련된 특징을 찾아보자. 나아가 생김새와 관련된 추가적인 특징을 찾아본다.")  
+text9 = st.text_input()
 
-st.header(":book: 정리하기")
-st.write(":white_circle: 컴퓨터가 이미지를 인식하는 방법을 이해할 수 있다.")
-st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징으로 동물을 분류할 수 있다.")  
+st.header(":book: 오늘 배운 내용 정리하기")
+st.write(":white_circle: 컴퓨터는 이미지를 숫자로 인식한다")
+st.write(":white_circle: 컴퓨터는 동물의 생김새 차이를 인식한다")  
 
 st.subheader(":question: 다음차시)동물들의 이미지 데이터는 어떻게 수집할 수 있을까? ")
