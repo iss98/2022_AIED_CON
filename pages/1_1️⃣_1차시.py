@@ -4,7 +4,7 @@ from PIL import Image
 import torch
 import torchvision.transforms as transforms
 
-st.title("1차시 : 생김새를 동물들을  \이용하여 분류할 수 있을까?")
+st.title("1차시 : 생김새를 동물들을 이용하여 분류할 수 있을까?")
 
 st.header("생각해보기 :grey_question: AI 학습에는 잘 분류된 데이터가 필요할까?")
 image_url = "images/image01.jpg"
@@ -31,11 +31,12 @@ with col3:
     st.image("images/image07.jpg", use_column_width=True)
 
 options = st.multiselect("두 마리의 동물을 골라주세요", ["참새", "곰", "여우", "금붕어", "오리", "돌고래"], ["참새", "금붕어"]
-st.write(f":white_circle: {options[0]}와(과) {options[1]}의 특징을 적어보자")
+# st.write(f":white_circle: {options[0]}와(과) {options[1]}의 특징을 적어보자")
 text1 = st.text_input()
-st.write(f":white_circle: {options[0]}와(과) {options[1]}의 공통된 특징을 적어보자")
+st.write(options[0])
+# st.write(f":white_circle: {options[0]}와(과) {options[1]}의 공통된 특징을 적어보자")
 text2 = st.text_input()
-st.write(f":white_circle: {options[0]}와(과) {options[1]}의 다른 특징을 적어보자")
+# st.write(f":white_circle: {options[0]}와(과) {options[1]}의 다른 특징을 적어보자")
 text3 = st.text_input()
 st.write(":white_circle: 6마리의 동물들을 분류할 수 있는 특징을 찾아보자.")
 text4 = st.text_input()
