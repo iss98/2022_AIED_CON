@@ -1,93 +1,53 @@
 import streamlit as st
 
-st.title("2차시 :나만의 분류 기준으로 동물 이미지 데이터를 수집할 수 있을까?")
+st.title("2차시 :나만의 분류 기준으로 동물 이미지를 수집할 수 있을까?")
 
-st.header(":rainbow: 지난 시간에? 생김새로 동물을 구분할 수 있다")
+st.header(":rainbow: 지난 시간 내용 복습")
+st.write(":white_circle: 동물 이미지를 보고 동물의 특징을 구분할 수 있었다")
+st.write(":white_circle: 컴퓨터는 이미지를 숫자로 이해한다. 컴퓨터는 이미지를 통해 동물의 특징을 인식한다.")
+st.write(":sparkles: 동영상을 보면서 지난 시간에 학습한 내용을 복습해보자!")
 image_url = "images/image08.jpg"
 youtube_url = "https://www.youtube.com/watch?v=_Js2GVyKELk"
 st.image(image_url, use_column_width=True)
 st.markdown(f"[자료1. 동물의 생김새로 구분하기]({youtube_url})")
 
-st.header(":video_game: Garbage In, Garbage Out!")
-st.write("AI 학습에는 잘 분류된 데이터가 필요하다")
+st.header("흥미 유발 :video_game: Garbage In, Garbage Out!")
+st.write("인공지능이 학습을 잘하려면 어떤 데이터가 필요할까? 게임을 통해 알아보자!")
 st.image("images/image09.jpg", use_column_width=True)
 garbage_url = "https://studio.code.org/s/oceans/lessons/1/levels/2"
 st.markdown(f"[자료1. 동물의 생김새로 구분하기]({garbage_url})")
+st.write(":sparkles: 인공지능 학습에는 잘 분류된 데이터가 필요하다.")
 
 st.header(":grey_exclamation: 이번 시간의 목표 ")
-st.write(":white_circle: 생김새로 구분할 수 있는 동물을 정하여, 그 이미지 데이터를 모을 수 있다.")
+st.write(":white_circle: 생김새로 구분할 수 있는 동물을 정하여, 이미지 데이터를 수집한다.")
 
-st.header(":one: 나만의 동물 분류 기준을 적어봅시다!")
-st.write(":white_circle: 내가 정한 동물들")
-st.write(":white_circle: 왜 이 동물들로 정했나요")
-st.write(":white_circle: 이 동물들은 어떻게 분류할 수 있나요?")
-st.write(":white_circle: 인공지능도 이 동물을 구분할 수 있을지 생각해봅시다.") 
+st.header(":one: 활동1 : 나만의 동물 분류 기준을 적어봅시다!")
+st.write(":white_circle: 어떤 동물들을 정했나요?")
+text = st.text_input('동물들', '강아지, 고래')
+st.write(":white_circle: 왜 ", text, "를 정했나요?")
+st.write(":white_circle: ", text, "를 어떻게 분류할 수 있나요?")
+st.write(":white_circle: 인공지능도 ", text, "를 구분할 수 있을지 생각해봅시다.") 
 
-st.header(":two: 이미지데이터를 몹는 방법(Kaggle & 구글 크롤링)")
-st.subheader("캐글을 이용해서 데이터를 몹는 방법")
+st.header(":two: 활동2 : 이미지를 수집하는 방법(캐글 & 구글 크롤링)")
+st.write("본격적으로 이미지를 수집하기 전! 어떻게 이미지를 수집할 수 있는지 대표적인 두 가지 방법을 알아봅시다")
+st.subheader("캐글을 이용해서 이미지를 수집하는 방법")
+st.write("캐글은 인공지능 학습용 데이터가 올라와 있는 사이트입니다. 내가 수집하고 싶은 이미지와 연관된 검색어를 통해 알맞은 이미지를 수집할 수 있습니다. 링크를 들어가 수집하고 싶은 동물 이름을 검색해서 이미지를 수집해봅시다.")
 kaggle_url = "https://kaggle.com"
 st.image("images/image10.jpg", use_column_width=True)
 st.markdown(f"[자료3. 캐글]({kaggle_url})")
-st.subheader("구글 크롤링을 이용하여 몹는방법")
-st.write("검색할 키워드를 골라서 크롤링을 해보자! \n 크롤링할때 사용가능한 코드는 선생님이 주실 예정!")
-code = '''
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-import time
-import urllib.request
-import ssl
-
-ssl._create_default_https_context = ssl._create_unverified_context
+st.subheader("구글 크롤링을 이용해서 이미지를 수집하는 방법")
+st.write("구글은 엄청난 양의 데이터를 검색할 수 있는 사이트입니다. 구글에 검색을 하면 여러 장의 관련 사진들을 확인할 수 있습니다. 크롤링이란 검색을 하고 사진을 다운로드 받는 과정을 코드를 통해 자동화시켜주는 작업입니다. 선생님이 주신 코드를 통해 키워드 검색으로 이미지를 수집해봅시다. 사용방법이 궁금하다면 선생님에게 물어보거나 아래의 링크 속 동영상을 시청해주세요.")
 
 
-#아래의 세 개의 변수를 바꿔주면서 셀을 반복해서 돌리면 데이터를 수집할 수 있다.
-#keyword : 구글에 검색할 keyword
-#path : 이미지를 저장할 폴더명(mammal, reptile, bird, fish)
-#max_num : 저장할 이미지의 개수
-#count : image를 덮어씌우지 않게 지금까지 저장한 count로 계속 수정해주면서 저장장
+st.header(":three: 활동 3: 도전! 이미지 수집하기")
+st.write("활동2를 통해서 이미지를 수집하는 방법을 학습했습니다. 캐글과 구글 크롤링 중 어떤 방법이 마음에 드시나요?? 원하는 방법으로 이미지를 수집하여 :file_folder: 폴더에 정리해봅시다. :exclamation: 활동1에서 정한 분류 기준에 맞게 이미지를 수집하였나요?")
+st.write(":open_mouth: 친구들과 수집한 데이터를 비교해봅시다.")
+st.write("캐글을 통한 방법과 구글 크롤링을 통한 방법의 장단점은 무엇일까요?.")
+st.write("**캐글** :grey_question: 양질의 풍부한 데이터를 수집할 수 있지만 완벽하게 목적에 부합하는 데이터를 찾기 어렵다")
+st.write("**구글 크롤링** :grey_question: 키워드 검색을 통해 목적에 부합하는 데이터를 찾기 쉽지만 양질의 풍부한 데이터를 수집하기는 어렵다.")
 
-keyword = "개구리"
-path = "reptile"
-max_num = 20
-count = 1
-
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome('chromedriver', options=options)
-# 로컬 환경에서는 위의 코드를 주석처리하고 아래의 코드를 사용
-# 로컬 환경에서 활용하면 크롤링을 시각적으로 확인할 수 있음
-# driver = webdriver.Chrome('chromedriver')
-driver.get("https://www.google.co.kr/imghp?hl=ko&ogbl")
-elem = driver.find_element(By.NAME, "q")
-elem.send_keys(keyword)
-elem.send_keys(Keys.RETURN)
-
-images = driver.find_elements(By.CSS_SELECTOR, ".rg_i.Q4LuWd")
-#최대 개수만큼만 이미지 뽑기. 최대 개수보다 이미지 개수가 적은 경우 이미지 개수만큼 추출
-if len(images) > max_num :
-    images = images[:max_num]
-    
-for image in images:
-#찾은 이미지들 저장하기, 저작권 문제로 이미지 저장이 안되는 경우 그냥 넘기기기
-    try : 
-        image.click()
-        time.sleep(3)
-        imageURL = driver.find_element(By.CSS_SELECTOR, ".n3VNCb.KAlRDb").get_attribute("src")
-        urllib.request.urlretrieve(imageURL, "labeleddata/"+path+"/"+str(count)+".jpg")
-        count +=1
-    except:
-          pass
-'''
-st.code(code, language="python")
-
-st.header(":three: 도전! 이미지 데이터 모으기")
-st.write("원하는 방법으로 이미지 데이터를 수집하여 :file_folder: 폴더별로 정리한다.")
-
-st.header(":book: 정리하기")
-st.write(":white_circle: 나만의 분류 기준을 만들고 동물 이미지 데이터를 수집할 수 있다.")
-st.write(":white_circle: 친구들과 수집한 데이터를 비교해봅시다.")  
+st.header(":book: 오늘 배운 내용 정리하기")
+st.write(":white_circle: 인공지능 학습에서 데이터 수집이 얼마나 중요한지 알 수 있다")  
+st.write(":white_circle: 나만의 분류 기준을 만들고 캐글 혹은 구글 크롤링을 통해 동물 이미지를 수집할 수 있다.")  
 
 st.subheader(":question: 다음차시)내가 모은 데이터를 인공지능도 분류할 수 있을까? ")
