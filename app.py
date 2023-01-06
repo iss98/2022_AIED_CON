@@ -41,6 +41,6 @@ st.header(":exclamation: 학생들이 모은 데이터로 모델을 학습시키
 st.write(":one: 아래의 github 페이지에서 :file_folder: contents를 다운로드 받고 개인 구글 드라이브로 옮긴다.")
 github_url = "https://github.com/iss98/2022_AIED_CON"
 st.markdown(f"[github 링크]({github_url})")
-st.write(":two: 학생들이 모은 데이터를 :file_folder:labeleddata 폴더에 넣는다.")
+st.write(":two: 학생들이 모은 데이터를 :file_folder: labeleddata 폴더에 넣는다.")
 st.write(":three: 차시에 맞는 :page_with_curl: .ipynb파일에 들어가서 제공된 코드를 이용해 모델을 학습시킨다.")
 st.write(":four: :file_folder:save폴더에 저장된 모델을 복제한 github repo에 넣어주면 끝!")
