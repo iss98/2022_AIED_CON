@@ -9,9 +9,11 @@ import pandas as pd
 from model import AnimalClassifier
 
 st.title("3차시 : 나만의 분류 기준을 인공지능이 학습할 수 있을까?")
-st.header(":rainbow: 지난 시간에? 목적에 맞는 데이터를 수집했다!")
+st.header(":rainbow: 지난 시간 내용 복습")
+st.write("지난 시간에 우리는 인공지능 학습에 잘 분류된 데이터가 필요하다는 것을 확인했습니다. 이미지를 수집하는 두 가지 방법을 배웠고, 인공지능 학습을 위해 이미지를 수집했습니다.")
 
 st.header(":grey_exclamation: 이번 시간의 목표 ")
+st.write(":exclamation: 선생님이 지난 시간에 여러분이 모은 이미지를 학습한 인공지능을 가지고 왔습니다! 우리가 모은 이미지로 학습한 인공지능이 동물들을 잘 분류하는지 동물의 특징을 잘 확인하는지 탐구해봅시다.")
 st.write(":white_circle: 분류 기능으로써 인공지능의 유용성을 안다.")
 st.write(":white_circle: 동물을 구별할 수 있는 유용한 특징들에 대하여 고민한다.")
 
@@ -22,7 +24,8 @@ model.eval()
 label = {0 : "포유류", 1 : "새", 2 : "파충류", 3 : "어류"}
 transform = transforms.Compose([transforms.PILToTensor()])
 
-st.header(":one: 이미지 분류기")
+st.header(":one: 활동 1 : 이미지 분류기")
+st.write("여러 장의 이미지를 가지고 와서 학습한 인공지능이 동물들을 잘 분류하는지 확인해봅시다! 분류하기 쉬운 이미지부터 분류하기 어려운 이미지를 모두 넣어보고 어떤 결과가 나오는지 확인해봅시다")
 file = st.file_uploader('이미지를 올려주세요', type = ['jpg','png'])
 if file is None:
   st.text('이미지를 먼저 올려주세요.')
@@ -48,7 +51,8 @@ with col2 :
         # st.bar_chart(df)
         st.success(result)
 
-st.header(":two: 설명 가능한 인공지능")
+st.header(":two: 활동 2: 설명 가능한 인공지능")
+st.write("설명 가능한 인공지능이란 인공지능이 분류를 한 기준을 시각화시켜주는 인공지능입니다. 활동1에서 했던 예시들을 다시 넣어보면서 왜 인공지능이 활동1에서 확인한 결과로 분류했는지 고민해봅시다")
 col1, col2 = st.columns(2)
 with col1 :
     if file is not None:        
@@ -86,8 +90,11 @@ with col2 :
         img_new = transforms.ToPILImage()(img_new)
         st.image(img_new)
 
-st.header(":three: 인공지능 분류모델이 갖는 장단점을 지금까지 학습한 내용을 바탕으로 얘기해보자")
+st.header(":three: 활동 3: 활동1과 활동2를 바탕으로 우리가 만든 인공지능의 장단점을 토의해보자")
+st.write(":thumbsup: 분류의 정확도가 높다. 인공지능이 기준을 가지고 분류한다")
+st.write(":thumbsdown: 인공지능이 완벽하지 않고, 인공지능이 세운 기준을 해석하는 것이 쉽지 않다")
+st.write(":question: 우리가 만든 인공지능을 우리의 실생활에서 사용할 수 있을까? 더 좋은 인공지능을 만드려면 데이터 수집 과정에서 어떻게 해야 할까? 동물을 분류하기 위해 다른 기준을 세울 수 있을까?")
 
-st.header(":book: 정리하기")
+st.header(":book: 오늘 배운 내용 정리하기")
 st.write(":white_circle: 인공지능을 활용하여 수집된 데이터에 대한 이미지 분류를 수행할 수 있다.")
 st.write(":white_circle: 동물을 분류하기 위한 다양한 기준을 생각해낼 수 있다.")  
