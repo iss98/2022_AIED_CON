@@ -37,7 +37,9 @@ st.image("images/image10.jpg", use_column_width=True)
 st.markdown(f"[자료3. 캐글]({kaggle_url})")
 st.subheader("구글 크롤링을 이용해서 이미지를 수집하는 방법")
 st.write("구글은 엄청난 양의 데이터를 검색할 수 있는 사이트입니다. 구글에 검색을 하면 여러 장의 관련 사진들을 확인할 수 있습니다. 크롤링이란 검색을 하고 사진을 다운로드 받는 과정을 코드를 통해 자동화시켜주는 작업입니다. 선생님이 주신 코드를 통해 키워드 검색으로 이미지를 수집해봅시다. 사용방법이 궁금하다면 선생님에게 물어보거나 아래의 링크 속 동영상을 시청해주세요.")
-
+googlec_url = "https://youtu.be/cqM4gC2RU-k"
+st.image("images/image11.jpg", use_column_width=True)
+st.markdown(f"[자료3. 캐글]({googlec_url})")
 
 st.header(":three: 활동 3: 도전! 이미지 수집하기")
 st.write("활동2를 통해서 이미지를 수집하는 방법을 학습했습니다. 캐글과 구글 크롤링 중 어떤 방법이 마음에 드시나요?? 원하는 방법으로 이미지를 수집하여 :file_folder: 폴더에 정리해봅시다. :exclamation: 활동1에서 정한 분류 기준에 맞게 이미지를 수집하였나요?")
