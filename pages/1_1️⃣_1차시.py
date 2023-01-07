@@ -31,15 +31,15 @@ with col3:
     st.image("images/image07.jpg", use_column_width=True)
 
 
-st.write(f":white_circle: 참새와 금붕어의 특징을 적어보자")
-st.write(f":white_circle: 참새와 금붕어의 공통된 특징을 적어보자")
-st.write(f":white_circle: 참새와 금붕어의 다른 특징을 적어보자")
+st.write(f":white_circle: 참새와 금붕어의 특징을 적어보자.")
+st.write(f":white_circle: 참새와 금붕어의 공통된 특징을 적어보자.")
+st.write(f":white_circle: 참새와 금붕어의 다른 특징을 적어보자.")
 st.write(":white_circle: 6마리의 동물들을 분류할 수 있는 특징을 찾아보자.")
 st.write(":white_circle: 위에서 생각한 특징들로 동물을 분류해보자.")
 
 st.header(":two: 활동 2 : 컴퓨터가 이미지를 이해하는 방법")
 st.write("컴퓨터는 숫자를 통해 이미지를 이해한다. 이때, 픽셀이란 단위를 통해 이미지를 이해하고 각 픽셀은 숫자를 갖는다. \n 숫자가 작아지면 이미지가 어두워지고, 숫자가 커지면 이미지가 밝아진다.")
-fac = st.slider("숫자의 크기를 바꿔보며 이미지의 변화를 관찰해보자", min_value = 1 , max_value = 255)
+fac = st.slider("사이드바를 움직여보며 밝기의 변화를 관찰해보자.", min_value = 1 , max_value = 255)
 img = Image.open("images/image03.jpg")
 img = img.resize((600,600)).convert("RGB")
 fade = torch.tensor(1 - np.ones((3,600,600)) * fac)
@@ -52,14 +52,14 @@ with col2 :
     st.image(blendimage, use_column_width=True)
 
 st.header(":three: 활동3 : 컴퓨터가 인식할 수 있는 동물의 특징을 알아보자")
-st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징과 인식할 수 없는 특징을 구분해보자")
+st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징과 인식할 수 없는 특징을 구분해보자.")
 st.write(":white_circle: 컴퓨터가 인식할 수 있는 특징의 공통점은 무엇일까?")
 if st.button("공통점은?"):
 	st.write("동물의 생김새가 아닐까!")
 st.write(":white_circle: 활동(1)에서 찾는 특징 중 생김새와 관련된 특징을 찾아보자. 나아가 생김새와 관련된 추가적인 특징을 찾아본다.")  
 
 st.header(":book: 오늘 배운 내용 정리하기")
-st.write(":white_circle: 컴퓨터는 이미지를 숫자로 인식한다")
-st.write(":white_circle: 컴퓨터는 동물의 생김새 차이를 인식한다")  
+st.write(":white_circle: 컴퓨터는 이미지를 숫자로 인식한다.")
+st.write(":white_circle: 컴퓨터는 동물의 생김새 차이를 인식한다.")  
 
 st.subheader(":question: 다음차시)동물들의 이미지 데이터는 어떻게 수집할 수 있을까? ")

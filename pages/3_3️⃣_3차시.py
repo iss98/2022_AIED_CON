@@ -25,8 +25,8 @@ label = {0 : "포유류", 1 : "조류", 2 : "파충류", 3 : "어류"}
 transform = transforms.Compose([transforms.PILToTensor()])
 
 st.header(":one: 활동 1 : 이미지 분류기")
-st.write("여러 장의 이미지를 가지고 와서 학습한 인공지능이 동물들을 잘 분류하는지 확인해봅시다! 분류하기 쉬운 이미지부터 분류하기 어려운 이미지를 모두 넣어보고 어떤 결과가 나오는지 확인해봅시다")
-file = st.file_uploader('이미지를 올려주세요', type = ['jpg','png'], key=0)
+st.write("여러 장의 이미지를 가지고 와서 학습한 인공지능이 동물들을 잘 분류하는지 확인해봅시다! 분류하기 쉬운 이미지부터 분류하기 어려운 이미지를 모두 넣어보고 어떤 결과가 나오는지 확인해봅시다.")
+file = st.file_uploader('이미지를 올려주세요.', type = ['jpg','png'], key=0)
 if file is None:
   st.text('이미지를 먼저 올려주세요.')
 else : 
@@ -52,7 +52,7 @@ with col2 :
         st.success(result)
 
 st.header(":two: 활동 2: 설명 가능한 인공지능")
-st.write("설명 가능한 인공지능이란 인공지능이 분류를 한 기준을 시각화시켜주는 인공지능입니다. 활동1에서 했던 예시들을 다시 넣어보면서 왜 인공지능이 활동1에서 확인한 결과로 분류했는지 고민해봅시다")
+st.write("설명 가능한 인공지능이란 인공지능이 분류를 한 기준을 시각화시켜주는 인공지능입니다. 활동1에서 했던 예시들을 다시 넣어보면서 왜 인공지능이 활동1에서 확인한 결과로 분류했는지 고민해봅시다.")
 col1, col2 = st.columns(2)
 with col1 :
     if file is not None:        
@@ -94,7 +94,7 @@ with col2 :
 st.header(":three: 활동 3 : 합성된 이미지에 대한 결과")
 st.write("두 동물들의 모습이 합성된 이미지를 입력하면 어떤 결과가 나올까요? 분류 결과 및 그 결과에 대한 인공지능의 근거를 확인해봅시다.")
 st.write("이미지의 분류 결과")
-file2 = st.file_uploader('이미지를 올려주세요', type = ['jpg','png'], key = 1)
+file2 = st.file_uploader('이미지를 올려주세요.', type = ['jpg','png'], key = 1)
 if file2 is None:
   st.text('이미지를 먼저 올려주세요.')
 else : 
@@ -119,7 +119,7 @@ with col2 :
         # st.bar_chart(df)
         st.success(result)
 
-st.write("인공지능이 분류를 한 기준에 대한 시각화입니다. 왜 인공지능이 합성된 사진을 위와 같이 분류했는지 고민해봅시다")
+st.write("인공지능이 분류를 한 기준에 대한 시각화입니다. 왜 인공지능이 합성된 사진을 위와 같이 분류했는지 고민해봅시다.")
 col1, col2 = st.columns(2)
 with col1 :
     if file2 is not None:        
@@ -158,8 +158,8 @@ with col2 :
         st.image(img_new)
 
 st.header(":four: 활동 4: 우리가 만든 인공지능의 장단점을 토의해보자")
-st.write(":thumbsup: 분류의 정확도가 높다. 인공지능이 기준을 가지고 분류한다")
-st.write(":thumbsdown: 인공지능이 완벽하지 않고, 인공지능이 세운 기준을 해석하는 것이 쉽지 않다")
+st.write(":thumbsup: 분류의 정확도가 높다. 인공지능이 기준을 가지고 분류한다.")
+st.write(":thumbsdown: 인공지능이 완벽하지 않고, 인공지능이 세운 기준을 해석하는 것이 쉽지 않다.")
 st.write(":question: 우리가 만든 인공지능을 우리의 실생활에서 사용할 수 있을까? 더 좋은 인공지능을 만드려면 데이터 수집 과정에서 어떻게 해야 할까? 동물을 분류하기 위해 다른 기준을 세울 수 있을까?")
 
 st.header(":book: 오늘 배운 내용 정리하기")
