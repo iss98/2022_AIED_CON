@@ -22,11 +22,13 @@ st.header(":grey_exclamation: 이번 시간의 목표 ")
 st.write(":white_circle: 생김새로 구분할 수 있는 동물을 정하여, 이미지 데이터를 수집한다.")
 
 st.header(":one: 활동1 : 나만의 동물 분류 기준을 적어봅시다!")
-st.write(":white_circle: 어떤 동물들을 정했나요?")
-text = st.text_input('동물들', '강아지, 고래')
-st.write(":white_circle: 왜 ", text, "를 정했나요?")
-st.write(":white_circle: ", text, "를 어떻게 분류할 수 있나요?")
-st.write(":white_circle: 인공지능도 ", text, "를 구분할 수 있을지 생각해봅시다.") 
+st.write(":white_circle: 아래는 여러 조류, 포유류, 파충류 동물들의 사진입니다.")
+image2_url = "images/image12.png"
+st.image(image2_url, use_column_width=True)
+st.write(":white_circle: 다른 종류들과 구별되는 조류만의 특징은 무엇이 있을까요?")
+st.write(":white_circle: 다른 종류들과 구별되는 포유류만의 특징은 무엇이 있을까요?")
+st.write(":white_circle: 다른 종류들과 구별되는 파충류만의 특징은 무엇이 있을까요?")
+st.write(":white_circle: 위에서 생각한 특징들 중 인공지능도 구별해낼 수 있는 특징들은 무엇이 있을까요?") 
 
 st.header(":two: 활동2 : 이미지를 수집하는 방법(캐글 & 구글 크롤링)")
 st.write("본격적으로 이미지를 수집하기 전! 어떻게 이미지를 수집할 수 있는지 대표적인 두 가지 방법을 알아봅시다")
